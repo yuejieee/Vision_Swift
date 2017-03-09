@@ -81,7 +81,7 @@ class DescribeViewController: BaseViewController {
         self.view.clipsToBounds = true
         self.imgView.isUserInteractionEnabled = true
         self.playBtn.addTarget(self, action: #selector(enterPlayer(sender:)), for: UIControlEvents.touchUpInside)
-        self.playBtn.backgroundColor = UIColor.lightGray
+        self.playBtn.setImage(UIImage.init(named: "play"), for: UIControlState.normal)
         self.blurView.transform = CGAffineTransform.init(rotationAngle: CGFloat(M_PI));
         self.coverView.backgroundColor = BLUR_COLOR
         self.titleLabel.textColor = UIColor.white

@@ -326,7 +326,6 @@ extension MHPlayer {
         
         if fileManager.fileExists(atPath: url) == true {
             filePath = URL(fileURLWithPath: url)
-            print(filePath)
         }else {
             filePath = NSURL(string: url) as URL?
             print("没有本地文件")
