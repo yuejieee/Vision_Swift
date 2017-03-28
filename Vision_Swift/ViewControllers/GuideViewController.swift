@@ -24,6 +24,13 @@ class GuideViewController: UIViewController {
         self.setupSubviewsProperty()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIView.animate(withDuration: 3) {
+            self.insideBtn.alpha = 0.7
+        }
+    }
+    
     func setupPlayer() {
         let url = Bundle.main.url(forResource: "0", withExtension: "mp4")
         self.avPlayerItem = AVPlayerItem.init(url: url!)
@@ -48,7 +55,7 @@ class GuideViewController: UIViewController {
         self.view.addSubview(self.titleLabel)
         self.titleLabel.snp.makeConstraints { (make) in
             make.left.right.equalTo(self.view)
-            make.top.equalTo(self.view).offset(110 * kScale)
+            make.top.equalTo(self.view).offset(100 * kScale)
             make.height.equalTo(50 * kScale)
         }
     }
@@ -58,7 +65,7 @@ class GuideViewController: UIViewController {
         self.insideBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
         self.insideBtn.titleLabel?.font = FontWithNameAndSize(name: FZLTC, size: 17)
         self.insideBtn.backgroundColor = UIColor.black
-        self.insideBtn.alpha = 0.7
+        self.insideBtn.alpha = 0
         self.insideBtn.layer.cornerRadius = 5 * kScale
         self.insideBtn.addTarget(self, action: #selector(insideAction(sender:)), for: UIControlEvents.touchUpInside)
         
@@ -86,16 +93,5 @@ class GuideViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

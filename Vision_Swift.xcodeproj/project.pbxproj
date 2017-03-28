@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F0409691E8901FE009FF7E7 /* CollectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0409681E8901FE009FF7E7 /* CollectModel.swift */; };
+		9F04096B1E8902D3009FF7E7 /* RealmHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F04096A1E8902D3009FF7E7 /* RealmHandle.swift */; };
+		9F04096E1E890BB1009FF7E7 /* collect@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F04096C1E890BB1009FF7E7 /* collect@3x.png */; };
+		9F04096F1E890BB1009FF7E7 /* collected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F04096D1E890BB1009FF7E7 /* collected@3x.png */; };
+		9F0F15E11E89160500510E8E /* CoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F15E01E89160500510E8E /* CoverModel.swift */; };
+		9F0F15E31E892C2700510E8E /* down@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F0F15E21E892C2700510E8E /* down@3x.png */; };
+		9F0F15E51E8932A400510E8E /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F15E41E8932A400510E8E /* ListView.swift */; };
 		9F19C98B1E72385B00422293 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F19C98A1E72385B00422293 /* GuideViewController.swift */; };
 		9F19C98D1E723A8600422293 /* v.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F19C98C1E723A8600422293 /* v.png */; };
 		9F19C9911E7242DD00422293 /* 0.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9F19C9901E7242DD00422293 /* 0.mp4 */; };
 		9F48598F1E6FED55006FA86F /* SwiftBaseScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48598E1E6FED55006FA86F /* SwiftBaseScrollViewController.swift */; };
+		9F954EFC1E89F5830099B4D3 /* CollectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F954EFB1E89F5830099B4D3 /* CollectViewController.swift */; };
 		9FDD3E9D1E70F26B00964C2E /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD3E8A1E70F26B00964C2E /* CategoryModel.swift */; };
 		9FDD3E9E1E70F26B00964C2E /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD3E8B1E70F26B00964C2E /* DataModel.swift */; };
 		9FDD3E9F1E70F26B00964C2E /* DayHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD3E8E1E70F26B00964C2E /* DayHomeViewController.swift */; };
@@ -68,10 +76,18 @@
 /* Begin PBXFileReference section */
 		0F6A21BAC1DD64DA6031BCA1 /* Pods-Vision_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vision_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vision_Swift/Pods-Vision_Swift.release.xcconfig"; sourceTree = "<group>"; };
 		594B2F2A17D0441AFD93EF2F /* Pods_Vision_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vision_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F0409681E8901FE009FF7E7 /* CollectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectModel.swift; sourceTree = "<group>"; };
+		9F04096A1E8902D3009FF7E7 /* RealmHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHandle.swift; sourceTree = "<group>"; };
+		9F04096C1E890BB1009FF7E7 /* collect@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "collect@3x.png"; sourceTree = "<group>"; };
+		9F04096D1E890BB1009FF7E7 /* collected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "collected@3x.png"; sourceTree = "<group>"; };
+		9F0F15E01E89160500510E8E /* CoverModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverModel.swift; sourceTree = "<group>"; };
+		9F0F15E21E892C2700510E8E /* down@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down@3x.png"; sourceTree = "<group>"; };
+		9F0F15E41E8932A400510E8E /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		9F19C98A1E72385B00422293 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		9F19C98C1E723A8600422293 /* v.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v.png; sourceTree = "<group>"; };
 		9F19C9901E7242DD00422293 /* 0.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 0.mp4; sourceTree = "<group>"; };
 		9F48598E1E6FED55006FA86F /* SwiftBaseScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftBaseScrollViewController.swift; sourceTree = "<group>"; };
+		9F954EFB1E89F5830099B4D3 /* CollectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectViewController.swift; sourceTree = "<group>"; };
 		9FDD3E8A1E70F26B00964C2E /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		9FDD3E8B1E70F26B00964C2E /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		9FDD3E8E1E70F26B00964C2E /* DayHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayHomeViewController.swift; sourceTree = "<group>"; };
@@ -181,11 +197,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9F0409671E8901B5009FF7E7 /* Handle */ = {
+			isa = PBXGroup;
+			children = (
+				9F04096A1E8902D3009FF7E7 /* RealmHandle.swift */,
+			);
+			path = Handle;
+			sourceTree = "<group>";
+		};
 		9FDD3E891E70F26B00964C2E /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				9FDD3E8A1E70F26B00964C2E /* CategoryModel.swift */,
 				9FDD3E8B1E70F26B00964C2E /* DataModel.swift */,
+				9F0409681E8901FE009FF7E7 /* CollectModel.swift */,
+				9F0F15E01E89160500510E8E /* CoverModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +233,7 @@
 				9FDD3E8E1E70F26B00964C2E /* DayHomeViewController.swift */,
 				9FDD3E8F1E70F26B00964C2E /* DescribeViewController.swift */,
 				9FDD3E901E70F26B00964C2E /* PlayerViewController.swift */,
+				9F954EFB1E89F5830099B4D3 /* CollectViewController.swift */,
 			);
 			path = Daily;
 			sourceTree = "<group>";
@@ -243,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				9FDD3E9A1E70F26B00964C2E /* ListTableViewCell.swift */,
+				9F0F15E41E8932A400510E8E /* ListView.swift */,
 			);
 			path = Daily;
 			sourceTree = "<group>";
@@ -253,13 +281,6 @@
 				9FDD3E9C1E70F26B00964C2E /* DiscCollectionViewCell.swift */,
 			);
 			path = Discovery;
-			sourceTree = "<group>";
-		};
-		9FDD3EA91E70F2AE00964C2E /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Categories;
 			sourceTree = "<group>";
 		};
 		9FDD3EAA1E70F2AE00964C2E /* Vendor */ = {
@@ -371,6 +392,9 @@
 		A7E44BE71E2CC0D400F84168 /* Resoures */ = {
 			isa = PBXGroup;
 			children = (
+				9F0F15E21E892C2700510E8E /* down@3x.png */,
+				9F04096C1E890BB1009FF7E7 /* collect@3x.png */,
+				9F04096D1E890BB1009FF7E7 /* collected@3x.png */,
 				9F19C9901E7242DD00422293 /* 0.mp4 */,
 				9F19C98C1E723A8600422293 /* v.png */,
 				9FDD3ECE1E714DFC00964C2E /* play.png */,
@@ -432,7 +456,7 @@
 		A7E44BFC1E2CC23E00F84168 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				9FDD3EA91E70F2AE00964C2E /* Categories */,
+				9F0409671E8901B5009FF7E7 /* Handle */,
 				9FDD3EAA1E70F2AE00964C2E /* Vendor */,
 				A7500AA41E6D05F000F0D29C /* Network */,
 				A7E44BFD1E2CC25800F84168 /* Marco.swift */,
@@ -504,11 +528,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F19C9911E7242DD00422293 /* 0.mp4 in Resources */,
+				9F04096F1E890BB1009FF7E7 /* collected@3x.png in Resources */,
 				9F19C98D1E723A8600422293 /* v.png in Resources */,
 				9FDD3EC31E70F44800964C2E /* fullScreen.png in Resources */,
 				9FDD3ECF1E714DFC00964C2E /* play.png in Resources */,
+				9F0F15E31E892C2700510E8E /* down@3x.png in Resources */,
 				A7272C301E2DAE83000A6FEB /* FZLTXIHJW--GB1-0.TTF in Resources */,
 				A7272C321E2DAE83000A6FEB /* selectedPlaceImage.png in Resources */,
+				9F04096E1E890BB1009FF7E7 /* collect@3x.png in Resources */,
 				A7E44BD21E2CBFD600F84168 /* LaunchScreen.storyboard in Resources */,
 				A7272C311E2DAE83000A6FEB /* FZLTZCHJW--GB1-0.TTF in Resources */,
 				9FDD3EC41E70F44800964C2E /* Next.png in Resources */,
@@ -583,6 +610,8 @@
 				9FDD3EA51E70F26B00964C2E /* ChartsViewController.swift in Sources */,
 				A7500AA71E6D05F000F0D29C /* NetwokTool.swift in Sources */,
 				9FDD3EA41E70F26B00964C2E /* DiscListViewController.swift in Sources */,
+				9F0409691E8901FE009FF7E7 /* CollectModel.swift in Sources */,
+				9F0F15E11E89160500510E8E /* CoverModel.swift in Sources */,
 				9FDD3EA01E70F26B00964C2E /* DescribeViewController.swift in Sources */,
 				9FDD3E9F1E70F26B00964C2E /* DayHomeViewController.swift in Sources */,
 				A7EA749C1E2CDFE0001123B0 /* BaseTabBar.swift in Sources */,
@@ -593,11 +622,14 @@
 				A7E44BEF1E2CC14700F84168 /* AppDelegate.swift in Sources */,
 				9FDD3EC91E70F44800964C2E /* MHPlayer.swift in Sources */,
 				9FDD3EA61E70F26B00964C2E /* HotHomeViewController.swift in Sources */,
+				9F04096B1E8902D3009FF7E7 /* RealmHandle.swift in Sources */,
+				9F0F15E51E8932A400510E8E /* ListView.swift in Sources */,
 				9FDD3E9E1E70F26B00964C2E /* DataModel.swift in Sources */,
 				A7500AA81E6D05F000F0D29C /* NetworkAPI.swift in Sources */,
 				9FDD3ECC1E70F44800964C2E /* MHTopMenu.swift in Sources */,
 				9FDD3EA31E70F26B00964C2E /* DiscHomeViewController.swift in Sources */,
 				9FDD3ECD1E70F44800964C2E /* MHDevice.swift in Sources */,
+				9F954EFC1E89F5830099B4D3 /* CollectViewController.swift in Sources */,
 				9FDD3EA81E70F26B00964C2E /* DiscCollectionViewCell.swift in Sources */,
 				A7E44C001E2CC30300F84168 /* BaseNavigationViewController.swift in Sources */,
 				9FDD3EA71E70F26B00964C2E /* ListTableViewCell.swift in Sources */,

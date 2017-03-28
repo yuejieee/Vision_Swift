@@ -9,7 +9,7 @@
 import UIKit
 
 // 首页请求
-let HOMEPAGE_URL = "http://baobab.wandoujia.com/api/v2/feed?num=1"
+var HOMEPAGE_URL = "http://baobab.wandoujia.com/api/v2/feed?num="
 // 分类请求
 let CATEGORY_URL = "http://baobab.wandoujia.com/api/v2/categories"
 // 排行请求

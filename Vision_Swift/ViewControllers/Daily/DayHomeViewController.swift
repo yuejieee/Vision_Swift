@@ -11,11 +11,12 @@ import SVProgressHUD
 import DGElasticPullToRefresh
 
 class DayHomeViewController: BaseViewController,
+ListViewDelegate,
 UITableViewDelegate,
 UITableViewDataSource,
 UIViewControllerPreviewingDelegate {
     
-    var tableView: UITableView?
+    var tableView: UITableView!
     var dataArray: Array<DataModel>?
     private let loadingView = DGElasticPullToRefreshLoadingViewCircle()
     
@@ -35,7 +36,7 @@ UIViewControllerPreviewingDelegate {
         self.tableView = UITableView.init(frame: CGRect.init(), style: UITableViewStyle.plain)
         self.view.addSubview(self.tableView!)
         self.tableView!.snp.makeConstraints { (make) in
-           make.left.right.top.bottom.equalTo(self.view)
+           make.edges.equalTo(self.view)
         }
         self.tableView?.dg_addPullToRefreshWithActionHandler({ 
             self.loadData(showProgress: false)
@@ -43,6 +44,7 @@ UIViewControllerPreviewingDelegate {
     }
     
     func setupPageSubViewsProperty() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "down"), style: UIBarButtonItemStyle.done, target: self, action: #selector(downAction(sender:)))
         self.tableView?.separatorStyle = UITableViewCellSeparatorStyle.none
         self.tableView?.backgroundColor = BACKGROUND_COLOR
         self.tableView?.delegate = self
@@ -57,7 +59,7 @@ UIViewControllerPreviewingDelegate {
         if showProgress {
             SVProgressHUD.show()
         }
-        NetwokTool.homeRequest { (array) in
+        NetwokTool.homeRequest(pageNum: 7) { (array) in
             self.dataArray = array
             self.tableView?.reloadData()
             self.tableView?.dg_stopLoading()
@@ -78,9 +80,10 @@ UIViewControllerPreviewingDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "tableView") as? ListTableViewCell
+        let reuse = "tableViewCell"
+        var cell = tableView.dequeueReusableCell(withIdentifier: reuse) as? ListTableViewCell
         if cell == nil {
-            cell = ListTableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: "tableView")
+            cell = ListTableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reuse)
         }
         if let dataModel = self.dataArray?[indexPath.row] {
             cell?.selectionStyle = UITableViewCellSelectionStyle.gray
@@ -127,6 +130,20 @@ UIViewControllerPreviewingDelegate {
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         self.show(viewControllerToCommit, sender: self)
+    }
+    
+    // MARK: - event response
+    func downAction(sender: UIBarButtonItem) {
+        let listView = ListView.init(frame: UIScreen.main.bounds)
+        listView.listDeleagete = self
+        listView.show()
+    }
+    
+    // MARK: - custom delegate
+    func selected(_ index: Int) {
+        if index == 0 {
+            self.navigationController?.pushViewController(CollectViewController(), animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {

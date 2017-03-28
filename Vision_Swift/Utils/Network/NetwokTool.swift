@@ -13,19 +13,23 @@ import SwiftyJSON
 
 class NetwokTool: NSObject {
     // MARK: - 首页数据请求
-    class func homeRequest(completionHandler: @escaping (Array<DataModel>) -> ()) {
+    class func homeRequest(pageNum: Int, completionHandler: @escaping (Array<DataModel>) -> ()) {
         var dataArray = Array<DataModel>()
-        Alamofire.request(HOMEPAGE_URL).responseJSON { (response) in
+        let url = HOMEPAGE_URL.appending(String(pageNum))
+        Alamofire.request(url).responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                let itemList = json["issueList"][0]["itemList"]
-                for (_, dicJson):(String, JSON) in itemList {
-                    if dicJson["type"].stringValue == "video"{
-                        let dic = dicJson["data"].dictionaryObject
-                        let data = DataModel()
-                        data.setValuesForKeys(dic!)
-                        dataArray.append(data)
+                let issueList = json["issueList"]
+                for (_, dicJson):(String, JSON) in issueList {
+                    let itemList = dicJson["itemList"]
+                    for (_, dicJson):(String, JSON) in itemList {
+                        if dicJson["type"].stringValue == "video"{
+                            let dic = dicJson["data"].dictionaryObject
+                            let data = DataModel()
+                            data.setValuesForKeys(dic!)
+                            dataArray.append(data)
+                        }
                     }
                 }
                 SVProgressHUD.dismiss()

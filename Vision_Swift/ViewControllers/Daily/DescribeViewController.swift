@@ -18,6 +18,7 @@ class DescribeViewController: BaseViewController {
     var detailLabel = UILabel()
     var describeLabel = UILabel()
     var indexPath = IndexPath()
+    var selected = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +28,24 @@ class DescribeViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isTranslucent = false
+        let image: UIImage
+        if RealmHandle.shareHandle.existData(self.dataModel.title) {
+            image = UIImage.init(named: "collected")!
+            self.selected = true
+        } else {
+            image = UIImage.init(named: "collect")!
+            self.selected = false
+        }
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: image,
+                                                                      style: UIBarButtonItemStyle.done,
+                                                                      target: self,
+                                                                      action: #selector(collectAction(sender:)))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isTranslucent = true
     }
     
@@ -82,7 +97,7 @@ class DescribeViewController: BaseViewController {
         self.imgView.isUserInteractionEnabled = true
         self.playBtn.addTarget(self, action: #selector(enterPlayer(sender:)), for: UIControlEvents.touchUpInside)
         self.playBtn.setImage(UIImage.init(named: "play"), for: UIControlState.normal)
-        self.blurView.transform = CGAffineTransform.init(rotationAngle: CGFloat(M_PI));
+        self.blurView.transform = CGAffineTransform.init(rotationAngle: CGFloat(Double.pi));
         self.coverView.backgroundColor = BLUR_COLOR
         self.titleLabel.textColor = UIColor.white
         self.titleLabel.font = FontWithNameAndSize(name: FZLTC, size: 17 * kScale)
@@ -144,10 +159,31 @@ class DescribeViewController: BaseViewController {
         playerVC.videoTitle = self.dataModel.title
         self.present(playerVC, animated: true, completion: nil)
     }
+    
+    func collectAction(sender: UIBarButtonItem) {
+        if self.selected {
+            RealmHandle.shareHandle.deleteData(self.dataModel.title)
+            self.navigationItem.rightBarButtonItem?.image = UIImage.init(named: "collect")
+        } else {
+            let cover = CoverModel()
+            cover.feed = self.dataModel.cover["feed"] as! String
+            cover.blurred = self.dataModel.cover["blurred"] as! String
+            let collect = CollectModel()
+            collect.title = self.dataModel.title
+            collect.type = self.dataModel.type
+            collect.category = self.dataModel.category
+            collect.playUrl = self.dataModel.playUrl
+            collect.duration = Int(self.dataModel.duration)
+            collect.describe = self.dataModel.describe
+            collect.cover = cover
+            RealmHandle.shareHandle.addData(collect)
+            self.navigationItem.rightBarButtonItem?.image = UIImage.init(named: "collected")
+        }
+        self.selected = !self.selected
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
 
 }

@@ -6,5 +6,6 @@ pod 'SnapKit'
 pod 'Kingfisher'
 pod 'SVProgressHUD'
 pod 'SwiftyJSON'
+pod 'RealmSwift'
 pod 'DGElasticPullToRefresh'
 end
